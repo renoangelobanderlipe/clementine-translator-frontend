@@ -2,7 +2,7 @@ import { Label, Select } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import { fetchLanguages } from '../utils/api';
 
-export const SelectLanguageComponent = () => {
+export const SelectLanguageComponent = ({ source }) => {
   const [languages, setLanguages] = useState([]);
 
   const getLanguages = async () => {
@@ -22,28 +22,28 @@ export const SelectLanguageComponent = () => {
 
   return (
     <div
-    className="max-w-md font-poppins"
-    id="select"
-  >
-    <div className="mb-2 block">
-      <Label
-        htmlFor="countries"
-        value="Select a language"
-        className='text-white font-poppins'
-      />
-    </div>
-    <Select
-      id="countries"
-      required
-      className='font-poppins text-[20px]'
+      className="max-w-md font-poppins"
+      id="select"
     >
-      {
-        languages.map((values, index) =>
-          <option key={index}>
-            {values.name}
-          </option>)
-      }
-    </Select>
-  </div>
+      <div className="mb-2 block">
+        <Label
+          htmlFor="countries"
+          value="Select a language"
+          className='text-white font-poppins'
+        />
+      </div>
+      <Select
+        id="countries"
+        required
+        className='font-poppins text-[20px]'
+      >
+        {
+          languages.map((values, index) =>
+            <option key={index} onClick={() => source(values)}>
+              {values.name}
+            </option>)
+        }
+      </Select>
+    </div>
   )
 }
