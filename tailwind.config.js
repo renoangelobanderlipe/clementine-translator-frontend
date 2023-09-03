@@ -11,16 +11,18 @@ export default {
   ],
 
   theme: {
-
+    screens: {
+      'phone': '375px',
+      'phone-lg': '768px',
+      'tablet': '1024px',
+      'laptop': '1280px',
+      'laptop-lg': '1440px',
+      'desktop': '1728px',
+    },
+    fontFamily : {
+      'poppins' : ['Poppins', 'sans-serif'],
+    },
     extend: {
-      screens: {
-        'phone': '375px',
-        'phone-lg': '768px',
-        'tablet': '1024px',
-        'laptop': '1280px',
-        'laptop-lg': '1440px',
-        'desktop': '1728px',
-      },
       padding: {
         '200': '200px',
         '100': '100px',
@@ -57,7 +59,7 @@ export default {
         'h2': ['64px', {
           lineHeight: 'auto',
           letterSpacing: 'auto',
-          fontWeight: '600',
+          fontWeight: '700',
         }],
         'h3': ['48px', {
           lineHeight: 'auto',
