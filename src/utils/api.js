@@ -5,5 +5,6 @@ const api = create({
 })
 
 export const fetchLanguages = () => api.get('api/v1/languages')
+export const translate = (params) => api.post('api/v1/translator', params)
 
 export default api;
